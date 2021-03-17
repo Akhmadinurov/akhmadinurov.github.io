@@ -1,0 +1,407 @@
+/* default */
+* {
+    padding: 0px;
+    margin: 0px;
+    color: #262626;
+    font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* elements */
+
+body {
+    background-color: #eefcff;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #262626;
+}
+
+/* logo and navigation  */
+
+.navbar__container {
+    padding: 0 13px;
+    background-color: white;
+    max-width: 1600px;
+
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    padding: 0 5%;
+    height: 56px;
+    background-color: #fff;
+    /* margin-top: -5px; */
+}
+
+/* flex blox definitions */
+
+.navbar__logo,
+.navbar__menu--list-item,
+.navbar__menu2--list-item {
+    display: inline-flex;
+    flex-wrap: nowrap;
+}
+
+/* logo */
+.navbar__logo {
+    position: relative;
+    /* margin-top: 3px; */
+    width: 137px;
+    height: 54px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: 1px 14px;
+}
+
+/* "surface" link */
+
+.big-link {
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 18px;
+    position: relative;
+}
+
+.big-link::before {
+    border-left: 2px solid #000;
+    height: 24px;
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: -21px;
+}
+
+/* main menu links, items */
+
+.navbar__menu {
+    margin-left: -18px;
+}
+
+.navbar__menu--list-item {
+    padding-top: 12px;
+    padding-bottom: 16px;
+    padding-left: 12px;
+    /* padding-right: 18px; */
+    margin-left: 7px;
+    /* line-height: 1; */
+
+}
+
+
+
+.navbar__link:hover {
+    border-bottom-color: #262626;
+}
+
+.navbar__link--sublevel {
+    position: relative;
+    /* padding-right: 19px; */
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.navbar__link--sublevel::after {
+    content: "";
+    position: absolute;
+    background-image: url(../images/chevron-down.svg);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: 6px 5px;
+}
+
+.navbar__link {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: transparent;
+    /* line-height: 1; */
+    padding-bottom: 4px;
+    align-items: baseline;
+}
+
+.big-link {
+    padding-top: 2px;
+}
+
+/* right side of nav */
+
+.navbar__menu2 {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    margin: 0 2px 0 auto;
+}
+
+.navbar__menu2--list-item {
+    display: inline-flex;
+
+    padding-top: 17px;
+    padding-bottom: 16px;
+    padding-left: 12px;
+    position: relative;
+
+}
+
+.navbar__menu2 {
+
+    padding-top: 3px;
+    padding-right: 1px;
+    width: 136px;
+}
+
+.navbar__link2--sublevel::after {
+    content: "";
+    position: absolute;
+    background-image: url(../images/chevron-down.svg);
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    background-position: 6px 4px;
+}
+
+.navbar__link2 {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: transparent;
+    line-height: 1;
+    padding-bottom: 4px;
+}
+
+.navbar__link2:hover {
+    border-bottom-color: #262626;
+}
+
+.link__search {
+    position: relative;
+    width: 25px;
+    margin-right: 12px;
+    background-image: url(../images/icon_search.png);
+    background-repeat: no-repeat;
+    background-position: 0 15px;
+}
+
+.link__cart {
+    position: relative;
+    width: 25px;
+    margin-right: 13px;
+    background-image: url(../images/icon_cart.png);
+    background-repeat: no-repeat;
+    background-position: 0px 14px;
+}
+
+.link__user {
+    position: relative;
+    width: 32px;
+    background-image: url(../images/login.svg);
+    background-repeat: no-repeat;
+    background-position: 0 11px;
+}
+
+/* user menu */
+.user__menu {
+    display: flex;
+    margin-top: -2px;
+}
+
+.icon__link {
+    display: inline-flex;
+}
+
+#navbar__menu--more-link {
+    display: none;
+}
+
+
+/* hamburger menu toggler */
+
+#navbar__sandwich {
+    display: none;
+}
+
+.line-wrapp {
+    width: 18px;
+    height: 12px;
+    position: absolute;
+    top: 21px;
+    left: 15px;
+    opacity: 0.5;
+    cursor: pointer;
+    /* transition: all 600ms ease-in-out; */
+}
+
+.active.line-wrapp {
+    /* transform: rotate(180deg); */
+}
+
+.line {
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    /* transition: all 600ms ease-in-out; */
+}
+
+.line.center {
+    margin: 3px 0;
+}
+
+.active .line.top {
+    width: 12px;
+    /* transform: translateX(8px) translateY(1px) rotate(45deg); */
+}
+
+.active .line.bottom {
+    width: 12px;
+    /* transform: translateX(8px) translateY(-1px) rotate(-45deg); */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* markup corrections  styles */
+.no-right-padding {
+    padding-right: 0px;
+}
+
+.more-margin {
+    margin-left: 20px;
+}
+
+.more-padding {
+    padding-left: 6px;
+}
+
+.more-padding2 {
+    padding-left: 19px;
+}
+
+.more-padding3 {
+    padding-right: 19px;
+}
+
+.more-padding4 {
+
+    padding-right: 18px;
+    padding-left: 19px;
+}
+
+.more-padding5 {
+    padding-left: 7px;
+}
+
+
+@media only screen and (max-width: 1190px) {
+    #navbar__menu--shop-now {
+        display: none;
+    }
+
+    #navbar__menu--support-link {
+        display: none;
+    }
+
+    #navbar__menu--more-link {
+        display: inline-block;
+    }
+
+}
+
+@media only screen and (max-width: 1030px) {
+
+    #navbar__menu--accessories-link {
+        display: none;
+    }
+
+    .navbar {
+        padding: 0 2%;
+    }
+
+}
+
+@media only screen and (max-width: 900px) {
+
+    #navbar__menu--computers-for-business-link {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 860px) {
+
+    #navbar__sandwich {
+        display: block;
+    }
+
+    .navbar__menu,
+    .navbar__menu2 {
+        display: none;
+    }
+
+    .user__menu {
+        margin: 0 0 0 auto;
+    }
+
+    .navbar {
+        border-bottom: 1px solid #e6e6e6;
+    }
+
+    .navbar__logo {
+        position: absolute;
+        left: calc(50% - 56px);
+        top: -2px;
+    }
+
+    .navbar__container {
+        padding: 0;
+    }
+
+    .link__search {
+        position: absolute;
+        width: 25px;
+        height: 50px;
+        top: -2px;
+        left: 65px;
+    }
+
+    .link__cart {
+        margin-right: 25px;
+        margin-top: -1px;
+    }
+}
+
+
